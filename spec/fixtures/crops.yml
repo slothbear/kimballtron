@@ -1,0 +1,7 @@
+clover:
+  name: Clover
+  level: 70
+
+# I'm not certain why this needs to be in spec/fixtures, since the scaffold
+# created a crops.yml in test/fixtures.  But this is where the
+# cucumber-rails/fixtures wiki page said to put stuff.

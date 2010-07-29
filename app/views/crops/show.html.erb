@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @crop.name %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @crop.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_crop_path(@crop) %> |
+<%= link_to 'Back', crops_path %>

@@ -1,4 +1,6 @@
 Kimballtron::Application.routes.draw do
+  resources :crops
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
