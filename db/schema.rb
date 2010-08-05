@@ -10,13 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100729194105) do
+ActiveRecord::Schema.define(:version => 20100805023614) do
 
   create_table "crops", :force => true do |t|
     t.string   "name"
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "market_order"
+    t.integer  "harvest_time"
+    t.integer  "buy"
+    t.integer  "sell"
+    t.integer  "xp"
+    t.string   "family"
+    t.integer  "mastery_1"
+    t.integer  "mastery_2"
+    t.integer  "mastery_3"
   end
 
 end

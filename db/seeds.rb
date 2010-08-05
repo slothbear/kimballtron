@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
+# Name,marketOrder,level,hours,cost,sell_for,xp,type,M1,M2,M3
+File.readlines("#{Rails.root}/db/crops.csv").each do |line|
+  name, market_order, level, harvest_time,
+    buy, sell, xp, family,
+    mastery_1, mastery_2, mastery_3 = line.split(",")
+
+  Crop.find_or_create_by_name(
+     :name => name,
+     :market_order => market_order,
+     :level => level,
+     :harvest_time => harvest_time,
+     :buy => buy,
+     :sell => sell,
+     :xp => xp,
+     :family => family,
+     :mastery_1 => mastery_1,
+     :mastery_2 => mastery_2,
+     :mastery_3 => mastery_3
+   )
+end
