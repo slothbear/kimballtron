@@ -120,7 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (= 1.0.0.rc.2)
+  bundler (= 1.0.0.rc.5)
   capybara
   cucumber
   cucumber-rails
