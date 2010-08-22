@@ -4,8 +4,8 @@ File.readlines("#{Rails.root}/db/crops.csv").each do |line|
     buy, sell, xp, family,
     mastery_1, mastery_2, mastery_3 = line.split(",")
 
-  Crop.find_or_create_by_name(
-     :name => name,
+  crop = Crop.find_or_create_by_name(name)
+  crop.update_attributes(
      :market_order => market_order,
      :level => level,
      :harvest_time => harvest_time,
