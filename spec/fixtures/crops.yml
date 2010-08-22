@@ -1,7 +1,20 @@
 clover:
   name: Clover
   level: 70
+  market_order: 11200
+
+white-grapes:
+  name: "White Grapes"
+  level: 29
+  market_order: 8700
+
+blackberries:
+  name: Blackberries
+  level: 29
+  market_order: 8800
 
 # I'm not certain why this needs to be in spec/fixtures, since the scaffold
 # created a crops.yml in test/fixtures.  But this is where the
 # cucumber-rails/fixtures wiki page said to put stuff.
+
+# It's also where the cucumber test database is seeded from.
