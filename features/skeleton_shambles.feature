@@ -1,7 +1,7 @@
 Feature: make sure skeleton can shamble
   In order to test Kimballtron from end to end
-  Everyone
-  wants to press the green deploy button and see crop info on the home page.
+  Everyone wants to press the big TEST button
+  So they can see crop info on the home page.
   
   Scenario: Verify level 70 required to plant clover
     Given the crop sample data has been loaded
