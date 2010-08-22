@@ -1,25 +1,40 @@
-<h1>Listing crops</h1>
+<div class="container">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Level</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<div id="junk-header" class="span-24 last">
+		<br />
+		<h2>crops</h2>
+	</div>
 
-<% @crops.each do |crop| %>
-  <tr>
-    <td><%= crop.name %></td>
-    <td><%= crop.level %></td>
-    <td><%= link_to 'Show', crop %></td>
-    <td><%= link_to 'Edit', edit_crop_path(crop) %></td>
-    <td><%= link_to 'Destroy', crop, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+	<div id="junk-left-sidebar" class="span-2">
+		<br />
+	</div>
 
-<br />
+	<div id="junk-main-content" class="span-10">
+		<table>
+		  <tr>
+		    <th>Name</th>
+		    <th>Level</th>
+		    <th></th>
+		    <th></th>
+		  </tr>
 
-<%= link_to 'New Crop', new_crop_path %>
+		<% @crops.each do |crop| %>
+		  <tr style="background-color:<%= cycle("#f0f4fe", "#e0e4fe") -%>">
+		    <td><%= crop.name %></td>
+		    <td><%= crop.level %></td>
+		    <td><%= link_to 'Show', crop %></td>
+		    <td><%= link_to 'Edit', edit_crop_path(crop) %></td>
+		  </tr>
+		<% end %>
+		</table>
+	</div>
+
+	<div id="junk-right-sidebar" class="span-12 last">
+		<br />
+	</div>	
+
+	<div id="junk-footer" class="span-24 last">
+		<br />
+	</div>
+
+</div>
