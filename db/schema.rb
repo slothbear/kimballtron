@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100805023614) do
+ActiveRecord::Schema.define(:version => 20100823013706) do
 
   create_table "crops", :force => true do |t|
     t.string   "name"
@@ -27,5 +27,24 @@ ActiveRecord::Schema.define(:version => 20100805023614) do
     t.integer  "mastery_2"
     t.integer  "mastery_3"
   end
+
+  create_table "farmers", :force => true do |t|
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "farmers", ["email"], :name => "index_farmers_on_email", :unique => true
+  add_index "farmers", ["reset_password_token"], :name => "index_farmers_on_reset_password_token", :unique => true
 
 end

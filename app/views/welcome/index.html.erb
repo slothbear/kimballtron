@@ -1,0 +1,19 @@
+<div class="container">
+	<% if farmer_signed_in? %>
+	  Signed in as <%= current_farmer.email %>.  Not you?
+	  <%= link_to "sign out", destroy_farmer_session_path %>
+	<% else %>
+	  <%= link_to "sign up", new_farmer_registration_path %> or 
+	  <%= link_to "sign in", new_farmer_session_path %>
+	<% end %>
+</div>
+<p /> <p />
+<h1>Kimballtron</h1>
+<p>Welcome to Kimballtron.  <br />
+You're finally going to have <em>fun</em>mastering your crops.<br />
+Efficiently.<br />
+Kimball promises.<br />
+Hank would never lie, would he?<br />
+Did I say Hank?  Or did I mean Oliver?  Well, if I said Hank, then...
+</p>
+<p />
