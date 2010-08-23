@@ -2,16 +2,28 @@ clover:
   name: Clover
   level: 70
   market_order: 11200
+  harvest_time: 4
+  mastery_1: 2500
+  mastery_2: 7500
+  mastery_3: 15000
 
 white-grapes:
   name: "White Grapes"
   level: 29
   market_order: 8700
+  harvest_time: 12
+  mastery_1: 1200
+  mastery_2: 2400
+  mastery_3: 3600
 
 blackberries:
   name: Blackberries
   level: 29
   market_order: 8800
+  harvest_time: 4
+  mastery_1: 1200
+  mastery_2: 3600
+  mastery_3: 7200
 
 # I'm not certain why this needs to be in spec/fixtures, since the scaffold
 # created a crops.yml in test/fixtures.  But this is where the

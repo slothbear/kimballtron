@@ -13,3 +13,13 @@ Feature: make sure skeleton can shamble
     Given the following crops exist: Blackberries, White Grapes
     When I am on the crops page
     Then I should see White Grapes on one line and Blackberries on the next
+
+  Scenario: Crop mastery levels and time-to-harvest are present
+    Given the following crop exists: Clover
+    When I am on the crop page for Clover
+    Then I should see "Clover"
+    And I should see "hours to harvest"
+    And I should see "4"
+    And I should see "2500"
+    And I should see "7500"
+    And I should see "15000"

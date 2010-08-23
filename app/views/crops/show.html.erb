@@ -1,15 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>crop:</b>
   <%= @crop.name %>
 </p>
 
 <p>
-  <b>Level:</b>
+  <b>level:</b>
   <%= @crop.level %>
 </p>
 
+<p>
+  <b>hours to harvest:</b>
+  <%= @crop.harvest_time %>
+</p>
+
+<div class="container">
+
+	<div id="junk-main-content" class="span-10">
+<table>
+	<tr style="background-color: #e0e4fe">
+		<th>mastery level</th>
+    	<th>1</th>
+    	<th>2</th>
+    	<th>3</th>
+    </tr>
+	<tr style="background-color: #f0f4fe">
+		<td>harvests required:</td>
+		<td><%= @crop.mastery_1 %></td>
+		<td><%= @crop.mastery_2 %></td>
+		<td><%= @crop.mastery_3 %></td>
+	</tr>
+</table>
+</div>
+
+<div id="junk-right-sidebar" class="span-14 last">
+	<br />
+</div>
+
+<div id="junk-footer" class="span-24 last">
+	<br />
+</div>
+
+</div>
 
 <%= link_to 'Edit', edit_crop_path(@crop) %> |
 <%= link_to 'Back', crops_path %>
