@@ -8,4 +8,10 @@ class Farmer < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_many :farms
+
+  after_save :ensure_has_farm
+
+  def ensure_has_farm
+    puts "((farms count: #{self.email}  #{self.farms.count}))"
+  end
 end
