@@ -1,0 +1,10 @@
+|
+<% if farmer_signed_in? %>
+  <li>
+  <%= link_to('sign out', destroy_farmer_session_path) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('sign in', new_farmer_session_path)  %>  
+  </li>
+<% end %>

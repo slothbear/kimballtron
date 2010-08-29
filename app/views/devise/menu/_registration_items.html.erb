@@ -1,0 +1,9 @@
+<% if farmer_signed_in? %>
+  <li>signed in as <%= @farmer.email %> |
+  <%= link_to('account settings', edit_farmer_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('sign up', new_farmer_registration_path)  %>
+  </li>
+<% end %>

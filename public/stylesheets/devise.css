@@ -1,0 +1,10 @@
+ul.hmenu {
+  text-align: right;
+  list-style: none;	
+  margin: 0 10 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;  
+}
