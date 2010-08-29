@@ -1,19 +1,17 @@
-<div class="container">
-	<% if farmer_signed_in? %>
-	  Signed in as <%= current_farmer.email %>.  Not you?
-	  <%= link_to "sign out", destroy_farmer_session_path %>
-	<% else %>
-	  <%= link_to "sign up", new_farmer_registration_path %> or 
-	  <%= link_to "sign in", new_farmer_session_path %>
-	<% end %>
-</div>
-<p /> <p />
-<h1>Kimballtron</h1>
-<p>Welcome to Kimballtron.  <br />
-You're finally going to have <em>fun</em>mastering your crops.<br />
-Efficiently.<br />
-Kimball promises.<br />
-Hank would never lie, would he?<br />
-Did I say Hank?  Or did I mean Oliver?  Well, if I said Hank, then...
-</p>
-<p />
+<h1>Welcome to Kimball</h1>
+You're finally going to have <em>fun</em> mastering your crops.<br />
+<br />
+<br />
+<ul>
+<li><b>Hank:</b> "A hound dog, eh? I used to have a hound dog...Well, not a <i>hound</i> dog. Maybe it was a <i>bird</i> dog. No...dogs don't generally fly. No, that's it! It was definitely a canary."</li>
+
+<li><b>Oliver:</b> "You just said it was a dog!"</li>
+<li><b>Hank:</b> "What was?"</li>
+<li><b>Oliver:</b> "Your canary!"</li>
+<li><b>Hank (looking around):</b> "Where?!"</li>
+</ul>
+<i>from the Wikipedia article on
+	<a href="http://en.wikipedia.org/wiki/Hank_Kimball">
+	Hank Kimball
+</a></i>
+
