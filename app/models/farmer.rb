@@ -9,9 +9,10 @@ class Farmer < ActiveRecord::Base
 
   has_many :farms
 
-  after_save :ensure_has_farm
-
-  def ensure_has_farm
-    puts "((farms count: #{self.email}  #{self.farms.count}))"
+  def after_create
+    if self.farms.count == 0
+      self.farms << Farm.create(:name => Farm.new_farm_name)
+    end
   end
+
 end
