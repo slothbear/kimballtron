@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100823013706) do
+ActiveRecord::Schema.define(:version => 20100827041558) do
 
   create_table "crops", :force => true do |t|
     t.string   "name"
@@ -46,5 +46,14 @@ ActiveRecord::Schema.define(:version => 20100823013706) do
 
   add_index "farmers", ["email"], :name => "index_farmers_on_email", :unique => true
   add_index "farmers", ["reset_password_token"], :name => "index_farmers_on_reset_password_token", :unique => true
+
+  create_table "farms", :force => true do |t|
+    t.string   "name"
+    t.integer  "plots"
+    t.integer  "harvests_per_day"
+    t.integer  "farmer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
