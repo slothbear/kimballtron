@@ -3,9 +3,8 @@ Feature: New farmer is presented with a standard issue farm
   I want a new farmer to automatically be assigned a farm
   So that I can immediately start working with my farm data
 
-@focus
   Scenario: New farmer gets a new farm
-    Given I am not authenticated
+    Given I am not signed in
     And I am on the home page
     And I follow "sign up"
     And I fill in "farmer_email" with "lisa@hooterville.net"
