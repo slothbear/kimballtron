@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kimballtron</title>
+  <title>Kimball -- Farmville crop mastery</title>
 
   <%= stylesheet_link_tag "blueprint/screen", :media => "screen, projection "%>
   <%= stylesheet_link_tag "blueprint/print", :media => "print" %>
@@ -17,12 +17,12 @@
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-	<ul class="hmenu">
-	  <%= render 'devise/menu/registration_items' %>
-	  <%= render 'devise/menu/login_items' %>
-	</ul>
-
 	<div class="container">
+		<ul class="hmenu">
+	  		<%= render 'devise/menu/registration_items' %>
+	  		<%= render 'devise/menu/login_items' %>
+		</ul>
+    	<h2 style="background-color:#a1c0F6;padding:.5em">Kimball</h2>
 		<%= yield %>
 	</div>
 </body>
