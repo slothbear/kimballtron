@@ -1,5 +1,5 @@
 <% if farmer_signed_in? %>
-  <li>signed in as <%= @farmer.email %> |
+  <li>signed in as <%= current_farmer.email %> |
   <%= link_to('account settings', edit_farmer_registration_path) %>
   </li>
 <% else %>
