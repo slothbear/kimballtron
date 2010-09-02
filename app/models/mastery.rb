@@ -10,7 +10,7 @@ class Mastery < ActiveRecord::Base
   end
 
   def Mastery.one_for_each_crop
-    Crop.all.collect { |crop| Mastery.new(:crop => crop) }
+    Crop.order(:market_order).collect { |crop| Mastery.new(:crop => crop) }
   end
 
 end

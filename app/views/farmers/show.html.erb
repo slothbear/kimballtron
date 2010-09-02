@@ -8,11 +8,27 @@ Welcome to your farm, affectionately known as
 
 <p /><p />
 <h3>masteries</h3>
-<ul>
-	<li>carrots:  17</li>
-	<li>beans:  150</li>
-	<li>nachos:  170</li>
-		
-		</ul>
+
+<div id="junk-left-sidebar" class="span-2">
+	<br />
+</div>
+
+<div id="junk-main-content" class="span-10">
+
+	<table>
+	    <th>name</th>
+	    <th>stars</th>
+	    <th>additional</th>
+	  </tr>
+
+	<% @farm.masteries.each do |mastery| %>
+		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+	    <td><%= mastery.crop.name %></td>
+	    <td align="right"><%= mastery.stars %></td>
+	    <td align="right"><%= mastery.additional_harvests %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
 
 
