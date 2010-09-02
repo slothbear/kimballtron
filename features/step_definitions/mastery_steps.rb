@@ -10,13 +10,13 @@ Then /^I see a list of all crops$/ do
 end
 
 
-Then /^each crop shows my stars and additional harvests$/ do
+Then /^each crop shows stars and additional harvests$/ do
   # not practical to check for all of them, but we'll check for
   # newest
-  page.should have_xpath('//*', :text => /Spinach.+\d+.+\d+/)
-  # changed (wheat, ?)
-  page.should have_xpath('//*', :text => /Junk/)
+  page.should have_xpath('//*', :text => /Spinach\s+0\s+0/)
+  # changed requirements (wheat).  Eh, this choice makes no sense.
+  page.should have_xpath('//*', :text => /Wheat\s+0\s+0/)
   # random
-  page.should have_xpath('//*', :text => /Random/)
+  page.should have_xpath('//*', :text => /Rice\s+0\s+0/)
 end
 
