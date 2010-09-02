@@ -4,8 +4,11 @@ class Farm < ActiveRecord::Base
   after_initialize :set_defaults
 
   def set_defaults
-   self.plots ||= 350
-   self.harvests_per_day ||= 2
+    return unless new_record?
+    self.plots ||= 0
+    self.harvests_per_day ||= 0
+    # count==0 is probably redundant with new_record?  #TODO: test
+    self.masteries = Mastery.one_for_each_crop if self.masteries.count == 0
   end
 
   private

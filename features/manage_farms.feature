@@ -12,7 +12,7 @@ Feature: New farmer is presented with a standard issue farm
     And I fill in "farmer_password_confirmation" with "myoliver"
     And I press "Sign up"
     Then I should see "Welcome to your farm"
-    And I should see "plots: 350"
-    And I should see "harvests per day: 2"
+    And I should see "plots: 0"
+    And I should see "harvests per day: 0"
 
 
