@@ -1,5 +1,6 @@
 class Farm < ActiveRecord::Base
   belongs_to :farmer
+  has_many :masteries
   after_initialize :set_defaults
 
   def set_defaults
