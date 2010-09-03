@@ -1,9 +1,10 @@
 <% if farmer_signed_in? %>
   <li>signed in as <%= current_farmer.email %> |
-  <%= link_to('account settings', edit_farmer_registration_path) %>
+  <%= link_to 'my farm', farmer_path(current_farmer) %> |
+  <%= link_to 'account settings', edit_farmer_registration_path %>
   </li>
 <% else %>
   <li>
-  <%= link_to('sign up', new_farmer_registration_path)  %>
+  <%= link_to 'sign up', new_farmer_registration_path  %>
   </li>
 <% end %>

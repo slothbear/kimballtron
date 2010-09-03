@@ -7,9 +7,8 @@ class MasteriesController < ApplicationController
     @masteries = Mastery.update(params[:masteries].keys, params[:masteries].values).reject {|m| m.errors.empty?}
     
     if @masteries.empty?   
-      flash[:notice] = "masteries updated"  
-      farmer = Mastery.find(params[:masteries].first.first).farm.farmer
-      redirect_to farmer_path(farmer)
+      flash[:notice] = "masteries updated"
+      redirect_to farmer_path(current_farmer)
     else  
       render :action => 'edit'  
     end
