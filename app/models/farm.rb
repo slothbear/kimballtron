@@ -7,7 +7,7 @@ class Farm < ActiveRecord::Base
     return unless new_record?
     self.plots ||= 0
     self.harvests_per_day ||= 0
-    # count==0 is probably redundant with new_record?  #TODO: test
+    # count==0 is probably redundant with new_record?  paranoid.#TODO: test
     self.masteries = Mastery.one_for_each_crop if self.masteries.count == 0
   end
 

@@ -1,0 +1,26 @@
+<%= form_tag update_masteries_path, :method => :put do %>
+  <% for mastery in @masteries %>
+    <%= fields_for "masteries[]", mastery do |f| %>
+
+  <% if mastery.errors.any? %>
+  <div id="errorExplanation">
+    <h2>The following errors prohibited your update from being saved:</h2>
+    <ul>
+    <%= mastery.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+	<p>
+	  <%= f.label mastery.crop.name %>  
+	  <%= f.label :stars %>  
+	  <%= f.text_field :stars %>  
+	  <%= f.label :additional_harvests %>  
+	  <%= f.text_field :additional_harvests %>  
+	</p>
+    <% end %>
+  <% end %>
+  <p><%= submit_tag "Submit" %></p>
+  <p><%= submit_tag "#TODO: Cancel" %></p>
+<% end %>
