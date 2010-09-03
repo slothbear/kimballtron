@@ -6,4 +6,13 @@ Kimballtron::Application.routes.draw do
   resources :crops
   get "welcome/index"
   root :to => "Welcome#index"
+
+#FIXME: learn how to add two routes properly.  This one adds a bunch.
+  resources :masteries, :only => [:edit, :update] do
+    collection do
+      get 'edit'
+      put 'update', :as => 'update'
+    end
+  end
+
 end

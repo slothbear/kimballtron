@@ -1,4 +1,6 @@
 class CropsController < ApplicationController
+  layout nil
+
   # GET /crops
   # GET /crops.xml
   def index
