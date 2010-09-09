@@ -8,7 +8,13 @@ Welcome to your farm, affectionately known as
 
 <p /><p />
 	<%= link_to("edit masteries", edit_masteries_path) %>
-	(<%= @farm.masteries.where("stars = 1").count %>)
+	current levels:
+<span style="font-family:monospace;font-weight:bold;">
+	- (<%= @farm.masteries.where("stars = 0").count %>)
+	* (<%= @farm.masteries.where("stars = 1").count %>)
+	** (<%= @farm.masteries.where("stars = 2").count %>)
+	*** (<%= @farm.masteries.where("stars = 3").count %>)
+</span>
 <h3>masteries</h3>
 
 <div id="junk-left-sidebar" class="span-2">
@@ -18,23 +24,17 @@ Welcome to your farm, affectionately known as
 <div id="junk-main-content" class="span-16">
 	<table>
 	  <tr>
-	    <th>name</th>
+	    <th>crop</th>
 	    <th>stars</th>
-	    <th>left</th>
+	    <th>additional</th>
 	    <th>hours</th>
 	  </tr>
 
-	<% @farm.masteries.where("stars = 1").order("stars ASC").sort_by(&:h_time).each do |mastery| %>
-	  <tr class="<%=
-	      if mastery.crop.harvest_time >= 10
-	        cycle('list_line_odd', 'list_line_even')
-	      else
-		    cycle('hone_line_odd', 'hone_line_even')
-		  end
-	  %>">
+	<% @farm.masteries.each do |mastery| %>
+	  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 	    <td><%= mastery.crop.name %></td>
 	    <td align="right"><%= mastery.stars %></td>
-		<td align="right"><%= mastery.remaining_harvests %></td>
+		<td align="right"><%= mastery.additional_harvests %></td>
 		<td align="right"><%= mastery.crop.harvest_time %></td>
 	  </tr>
 
