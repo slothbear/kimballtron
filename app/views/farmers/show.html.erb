@@ -7,14 +7,16 @@ Welcome to your farm, affectionately known as
 <hr />
 
 <p /><p />
-	<%= link_to("edit masteries", edit_masteries_path) %>
 	current levels:
 <span style="font-family:monospace;font-weight:bold;">
 	- (<%= @farm.masteries.where("stars = 0").count %>)
 	* (<%= @farm.masteries.where("stars = 1").count %>)
 	** (<%= @farm.masteries.where("stars = 2").count %>)
 	*** (<%= @farm.masteries.where("stars = 3").count %>)
-</span>
+</span><br />
+approximate time to complete level 1: xx days, level 2: yy months, level 3: 12 decades
+<p />
+	<%= link_to("edit masteries", edit_masteries_path) %>
 <h3>masteries</h3>
 
 <div id="junk-left-sidebar" class="span-2">
