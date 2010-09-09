@@ -1,6 +1,7 @@
 class Mastery < ActiveRecord::Base
   belongs_to :crop
   belongs_to :farm
+  default_scope order('crops.market_order').includes(:crop)
   after_initialize :set_defaults
 
   validates_numericality_of :stars,
