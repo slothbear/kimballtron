@@ -8,26 +8,36 @@ Welcome to your farm, affectionately known as
 
 <p /><p />
 	<%= link_to("edit masteries", edit_masteries_path) %>
+	(<%= @farm.masteries.where("stars = 1").count %>)
 <h3>masteries</h3>
 
 <div id="junk-left-sidebar" class="span-2">
 	<br />
 </div>
 
-<div id="junk-main-content" class="span-10">
-
+<div id="junk-main-content" class="span-16">
 	<table>
+	  <tr>
 	    <th>name</th>
 	    <th>stars</th>
-	    <th>additional</th>
+	    <th>left</th>
+	    <th>hours</th>
 	  </tr>
 
-	<% @farm.masteries.each do |mastery| %>
-		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+	<% @farm.masteries.where("stars = 1").order("stars ASC").sort_by(&:h_time).each do |mastery| %>
+	  <tr class="<%=
+	      if mastery.crop.harvest_time >= 10
+	        cycle('list_line_odd', 'list_line_even')
+	      else
+		    cycle('hone_line_odd', 'hone_line_even')
+		  end
+	  %>">
 	    <td><%= mastery.crop.name %></td>
 	    <td align="right"><%= mastery.stars %></td>
-	    <td align="right"><%= mastery.additional_harvests %></td>
+		<td align="right"><%= mastery.remaining_harvests %></td>
+		<td align="right"><%= mastery.crop.harvest_time %></td>
 	  </tr>
+
 	<% end %>
 	</table>
 

@@ -1,4 +1,20 @@
+<div id="junk-left-sidebar" class="span-2">
+	<br />
+</div>
+
+
+<div id="junk-main-content" class="span-12">
+
 <%= form_tag update_masteries_path, :method => :put do %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>stars</th>
+    <th>additional</th>
+    <th>/ level 2</th>
+  </tr>
+
   <% for mastery in @masteries %>
     <%= fields_for "masteries[]", mastery do |f| %>
 
@@ -11,16 +27,23 @@
     <% end %>
     </ul>
   </div>
-  <% end %>
-	<p>
-	  <%= f.label mastery.crop.name %>  
-	  <%= f.label :stars %>  
-	  <%= f.text_field :stars %>  
-	  <%= f.label :additional_harvests %>  
-	  <%= f.text_field :additional_harvests %>  
-	</p>
-    <% end %>
-  <% end %>
-  <p><%= submit_tag "Submit" %></p>
-  <p><%= submit_tag "#TODO: Cancel" %></p>
-<% end %>
+  <% end # errors? %>
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+	  <td><%= f.label mastery.crop.name %></td>
+	  <td><%= f.text_field :stars, :size => 3 %></td>
+	  <td><%= f.text_field :additional_harvests, :size => 3 %></td>
+	  <td><%= mastery.crop.mastery_2 %></td>
+  </tr>
+
+  <% end # fields_for masteries %>
+  <% end # masteries %>
+</table>
+
+  <p>
+	<%= submit_tag "update", :name => "update"%>
+	<%= submit_tag "cancel", :name => "cancel" %>
+  </p>
+<% end # form_tag%>
+
+</div>
