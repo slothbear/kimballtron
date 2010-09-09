@@ -9,10 +9,12 @@
 
 <table>
   <tr>
-    <th>name</th>
+    <th>crop</th>
     <th>stars</th>
     <th>additional</th>
-    <th>/ level 2</th>
+    <th>L1</th>
+    <th>L2</th>
+    <th>L3</th>
   </tr>
 
   <% for mastery in @masteries %>
@@ -33,7 +35,9 @@
 	  <td><%= f.label mastery.crop.name %></td>
 	  <td><%= f.text_field :stars, :size => 3 %></td>
 	  <td><%= f.text_field :additional_harvests, :size => 3 %></td>
-	  <td><%= mastery.crop.mastery_2 %></td>
+	  <td><%= mastery.crop.mastery_1 %></td>
+      <td><%= mastery.crop.mastery_2 %></td>
+      <td><%= mastery.crop.mastery_3 %></td>
   </tr>
 
   <% end # fields_for masteries %>
