@@ -20,6 +20,7 @@ class Mastery < ActiveRecord::Base
     return unless new_record?
     self.stars ||= 0
     self.additional_harvests ||= 0
+    self.market_order = crop.market_order
   end
 
   def Mastery.one_for_each_crop
