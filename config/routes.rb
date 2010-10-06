@@ -1,12 +1,13 @@
 Kimballtron::Application.routes.draw do
   devise_for :farmers
   resources :masteries, :only => :index
-  resources :crops
-  #TODO: do I need both the get/welcome and root/welcome lines?
-  get "welcome/index"
   root :to => "Welcome#index"
 
-#FIXME: learn how to add two routes properly.  This one adds a bunch.
+#TODO: This creates *member* edit and update methods as well.  why?
+#rake routes:
+#edit_mastery GET    /masteries/:id/edit(.:format)    {:action=>"edit", :controller=>"masteries"}
+#     mastery PUT    /masteries/:id(.:format)         {:action=>"update", :controller=>"masteries"}
+
   resources :masteries, :only => [:edit, :update] do
     collection do
       get 'edit'
