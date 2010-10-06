@@ -4,7 +4,7 @@ Given /^the following crops? exists?: (.+)$/ do | crops |
   end
 end
 
-Then /^I should see White Grapes on one line and Blackberries on the next$/ do
-  regexp = /White Grapes.*\n.*Blackberries/m
+Then /^I should see White Grapes on one line and Black Berries on the next$/ do
+  regexp = /White Grapes.*\n.*Black Berries/m
   page.should have_xpath('//*', :text => regexp)
 end

@@ -1,7 +1,7 @@
 class Mastery < ActiveRecord::Base
   belongs_to :crop
   belongs_to :farm
-  default_scope order('crops.market_order').includes(:crop)
+  default_scope order('market_order')
   after_initialize :set_defaults
 
   validates_numericality_of :stars,
@@ -24,7 +24,7 @@ class Mastery < ActiveRecord::Base
   end
 
   def Mastery.one_for_each_crop
-    Crop.order(:market_order).collect { |crop| Mastery.new(:crop => crop) }
+    Crop.all.collect { |crop| Mastery.new(:crop => crop) }
   end
 
 end
