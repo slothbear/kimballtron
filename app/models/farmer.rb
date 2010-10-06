@@ -7,12 +7,13 @@ class Farmer < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  has_many :farms
+  has_one :farm
   after_create :ensure_has_farm
 
   def ensure_has_farm
-    if self.farms.count == 0
-      self.farms << Farm.create(:name => Farm.new_farm_name)
+    # TODO: [nilfarm] this is also done in farmers_controller
+    if self.farm.nil?
+      self.farm = Farm.create(:name => Farm.new_farm_name)
     end
   end
 

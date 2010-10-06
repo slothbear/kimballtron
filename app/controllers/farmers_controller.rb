@@ -6,10 +6,10 @@ class FarmersController < ApplicationController
     # TODO: should only have a missing farm during testing/development.
     # I don't want to auto-create a real farm here -- could mask problem
     # farms disappearing??
-    if @farmer.farms.count == 0
-      @farmer.farms << Farm.create(:name => "** missing farm **")
+    if @farmer.farm.nil?
+      @farmer.farm = Farm.create(:name => "** missing farm **")
     end
-    @farm = @farmer.farms.first  # current implementation assumes 1 farm
+    @farm = @farmer.farm
 
   end
 

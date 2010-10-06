@@ -1,6 +1,6 @@
 class MasteriesController < ApplicationController
   def edit
-    @masteries = current_farmer.farms.first.masteries
+    @masteries = current_farmer.farm.masteries
   end
 
   def update
