@@ -22,7 +22,7 @@ Lupine:
   mastery_3: 1830
 Dog Rose:
   market_order: 7500
-  level: 24000
+  level: 24
   buy: 105
   harvest_time: 10
   sell: 190
