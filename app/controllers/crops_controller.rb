@@ -4,7 +4,7 @@ class CropsController < ApplicationController
   # GET /crops
   # GET /crops.xml
   def index
-    @crops = Crop.order(:market_order)
+    @crops = Crop.all
 
     respond_to do |format|
       format.html # index.html.erb
