@@ -3,7 +3,7 @@ class FarmersController < ApplicationController
 
   def show
     @farmer = Farmer.find(params[:id])
-    # TODO: should only have a missing farm during testing/development.
+    # TODO: [nilfarm] should only have a missing farm during testing/development.
     # I don't want to auto-create a real farm here -- could mask problem
     # farms disappearing??
     if @farmer.farm.nil?

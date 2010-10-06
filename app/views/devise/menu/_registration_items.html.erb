@@ -1,6 +1,6 @@
 <% if farmer_signed_in? %>
   <li>signed in as <%= current_farmer.email %> |
-  <%= link_to 'my farm', farmer_path(current_farmer) %> |
+  <%= link_to 'my farm', masteries_path %> |
   <%= link_to 'account settings', edit_farmer_registration_path %>
   </li>
 <% else %>

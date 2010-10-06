@@ -1,9 +1,8 @@
 Kimballtron::Application.routes.draw do
-  get "farmers/show"
-
   devise_for :farmers
-  resources :farmers, :only => :show
+  resources :masteries, :only => :index
   resources :crops
+  #TODO: do I need both the get/welcome and root/welcome lines?
   get "welcome/index"
   root :to => "Welcome#index"
 
